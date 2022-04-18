@@ -1,67 +1,70 @@
 package addressbookday22;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class AdressBook {
-	public void Contact() {
+	public void Contact() { 
 
-		ContactInfo ci = new ContactInfo();
-		Scanner sc = new Scanner(System.in);
+		static Scanner sc = new Scanner(System.in);
+	    static List<ContactInfo> list = new LinkedList<ContactInfo>();
 
-		System.out.print("\nEnter First Name  : ");
-		String firstName = sc.nextLine();
-		ci.setFirstName(firstName);
+	
+	    public static void addingContact()
+	    {
+	        System.out.println("Enter your firstName : ");
+	        String firstName = sc.nextLine();
+	        System.out.println("Enter your lastName : ");
+	        String lastName = sc.nextLine();
+	        System.out.println("Enter your address : ");
+	        String address = sc.nextLine();
+	        System.out.println("Enter your city : ");
+	        String city = sc.nextLine();
+	        System.out.println("Enter your state : ");
+	        String state = sc.nextLine();
+	        System.out.println("Enter your pin : ");
+	        String pin = sc.nextLine();
+	        System.out.println("Enter your MobileNo : ");
+	        String MobileNo = sc.nextLine();
+	        System.out.println("Enter your email : ");
+	        String email = sc.nextLine();
+	        ContactInfo obj = new ContactInfo(firstName, lastName, city, state, pin, MobileNo, email);
+	        list.add(obj);
+	    }
 
-		System.out.print("\nEnter Last Name  : ");
-		String lastName = sc.nextLine();
-		ci.setLastName(lastName);
 
-		System.out.print("\nEnter E-mail  : ");
-		String email = sc.nextLine();
-		ci.setEmail(email);
+	    public static void editContact()
+	    {
+	        
+	        System.out.println("Enter first name for confirmation : ");
+	        String firstName = sc.nextLine();
+	        for (int i = 0; i < list.size(); i++) {
+	            if (list.get(i).getFirstName().equalsIgnoreCase(firstName))
+	            {
+	                list.remove(i);
+	                addingContact();
+	                System.out.println("Successfully Edit data");
+	            }
+	            else {
+	                System.out.println("No data found in Address Book");
+	            }
+	        }
+	    }
 
-		System.out.print("\nEnter Address  : ");
-		String address = sc.nextLine();
-		ci.setAddress(address);
 
-		System.out.print("\nEnter City  : ");
-		String city = sc.nextLine();
-		ci.setCity(city);
+	    public static void main(String[] args) {
 
-		System.out.print("\nEnter State  : ");
-		String state = sc.nextLine();
-		ci.setState(state);
+	    	AdressBook Book = new AdressBook();
+	        
+	        System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
+	        
+	        System.out.println("Enter details of new contact");
+	        addingContact();
+	        
+	        editContact();
 
-		System.out.print("\nEnter Phone Number  : ");
-		long phoneNo = sc.nextLong();
-		ci.setPhoneNo(phoneNo);
-
-		System.out.print("\nEnter Zip  : ");
-		int zip = sc.nextInt();
-		ci.setZip(zip);
-		showContact(ci);
-		sc.close();
-
+	        System.out.println(list); 
+	    }
 	}
-
-	public void showContact(ContactInfo contact) {
-
-		System.out.print("\n-----------------");
-		System.out.print("\nFirst Name  : " + contact.getFirstName());
-		System.out.print("\nLast Name   : " + contact.getLastName());
-		System.out.print("\nAddress     : " + contact.getAddress());
-		System.out.print("\nCity        : " + contact.getCity());
-		System.out.print("\nState       : " + contact.getState());
-		System.out.print("\nPhone Number : " + contact.getPhoneNo());
-		System.out.print("\nE-mail      : " + contact.getEmail());
-		System.out.print("\nZip         : " + contact.getZip());
-
-	}
-
-	public static void main(String[] args) {
-
-		AdressBook book = new AdressBook();
-		book.Contact();
-	}
-}
 
