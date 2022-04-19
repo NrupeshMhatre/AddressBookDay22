@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AdressBook {
-	
-    
 	 static Scanner sc = new Scanner(System.in);
 	    static List<ContactInfo> list = new ArrayList<ContactInfo>();
 
@@ -46,11 +44,12 @@ public class AdressBook {
 	    public static void main(String[] args) {
 
 	    	AdressBook ad = new AdressBook();
-	        
-	        System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
 	       
+	        System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
+	        
 	        addPersons();
 	        System.out.println(list); 
 	    }
+	 
 }
 
