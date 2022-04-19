@@ -7,13 +7,14 @@ public class ContactInfo {
 	private String city;
 	private String state;
 	private String email;
-	private int zip, phoneNumber;
+	private int zip;
+	private long phoneNumber;
 
 	public ContactInfo() {
 	}
 
 	public ContactInfo(String firstName, String lastName, String address, String city, String state, String email,
-			int zip, int phoneNumber) {
+			int zip, long phoneNumber) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -53,7 +54,7 @@ public class ContactInfo {
 		return zip;
 	}
 
-	public int getPhoneNumber() {
+	public long getPhoneNumber() {
 		return phoneNumber;
 	}
 
@@ -85,7 +86,7 @@ public class ContactInfo {
 		this.zip = zip;
 	}
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -95,8 +96,4 @@ public class ContactInfo {
 				+ city + ", state=" + state + ", email=" + email + ", zip=" + zip + ", phoneNumber=" + phoneNumber
 				+ "]";
 	}
-
-	
-		
-	
 }
