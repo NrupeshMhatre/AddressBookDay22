@@ -146,6 +146,11 @@ public class AdressBook {
       }
   }
 
+  public void countList() {
+      Long total = list.stream().count();
+      System.out.println(total);
+  }
+
   public void sortCity() {
       Collections.sort(list, Sort.compareCity);
   }
@@ -160,7 +165,5 @@ public class AdressBook {
               "list=" + list +
               '}';
   }
-
-
 }
 
