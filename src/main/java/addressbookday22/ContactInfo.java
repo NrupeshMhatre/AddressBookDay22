@@ -1,39 +1,47 @@
 package addressbookday22;
 
 public class ContactInfo {
-	public String firstname, lastname;
-    public String address, city, state;
-    public int zip;
-    public long phoneNumber;
-    public String email;
+	private String firstName;
+    private String lastName;
+    private String address;
+    private String city;
+    private String state;
+    private String zip;
+    private long phno;
+    private String email;
+    
+    @Override
+    public String toString()
+    {
+        return "Contact [firstName: "+firstName+" , "+"lastName: "+lastName+" , "+"address: "+address+" , "+"city: "+city+" , "+
+                "state: "+state+" , "+"zip: "+zip+" , "+"phoneNo: "+phno+" , "+"email: "+email+ "]" ;
+    }
 
-    public ContactInfo(String firstname, String lastname, String address, String city, String state, int zip, long phonenumber, String email) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public ContactInfo(String firstName, String lastName, String address, String city, String state, String zip, long phoneNo, String email)
+    {
+        super();
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.address = address;
         this.city = city;
         this.state = state;
         this.zip = zip;
-        this.phoneNumber = phonenumber;
+        this.phno = phno;
         this.email = email;
     }
 
-     public ContactInfo() {
-
-     }
-
     
     public String getFirstName() {
-        return firstname;
+        return firstName;
     }
     public void setFirstName(String firstName) {
-        this.firstname = firstName;
+        this.firstName = firstName;
     }
     public String getLastName() {
-        return lastname;
+        return lastName;
     }
     public void setLastName(String lastName) {
-        this.lastname = lastName;
+        this.lastName = lastName;
     }
     public String getAddress() {
         return address;
@@ -53,17 +61,17 @@ public class ContactInfo {
     public void setState(String state) {
         this.state = state;
     }
-    public int getZip() {
+    public String getZip() {
         return zip;
     }
-    public void setZip(int zip) {
+    public void setZip(String zip) {
         this.zip = zip;
     }
     public long getPhoneNo() {
-        return phoneNumber;
+        return phno;
     }
-    public void setPhoneNo(long phone) {
-        this.phoneNumber = phone;
+    public void setPhoneNo(long phno) {
+        this.phno = phno;
     }
     public String getEmail() {
         return email;
